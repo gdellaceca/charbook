@@ -28,6 +28,8 @@ def countchar(l:str): #counts the alphabetic characters in a string
 
     return ab , numchar
 
+def countchar_full():
+    pass
 
 def histogram():
     pass
@@ -44,7 +46,10 @@ args = parser.parse_args()
 
 book = read_book(args.book)
 
-freq, n = countchar(book)
+if args.stats:
+    pass#freq, n, n_l, n_w = countchar_full(book)
+else:  
+    freq, n = countchar(book)
 
 for t in freq:
     print(f'{t} : {freq[t]/n:.4f}')
